@@ -7,12 +7,16 @@ AES (Advanced Encryption Standard) employs a substitution-permutation network, w
 - The AES Encryption process starts with Key Expansion where all the required round keys are generated depending on the input length (128 bits here) referred to as cipher key. So, in our case 10 round keys(one key for each round) are generated for a key length of 128 based on the formula - *No. of rounds = (Key length/32) + 6*.
 ### Initial Round:
 #### AddRoundKey:
-- Each byte of the state is combined with a block of the round key using bitwise XOR. The round keys are derived from the initial cipher key through a process known as key expansion. The purpose of AddRoundKey is to mix the data with the key material in a way that is computationally infeasible to reverse without knowledge of the key.
+- AddRoundKey involves combining the current state of the data with a round key using the bitwise XOR operation. The round keys are derived from the initial cipher key through a process known as key expansion. The purpose of AddRoundKey is to mix the data with the key material in a way that is computationally infeasible to reverse without knowledge of the key.  
 ### Main Rounds:
-#### Substitution: 
-- Each byte in the state is replaced with a corresponding byte from a fixed substitution (S-box) table.    
+#### Substitution Bytes: 
+- **S-box**: It is the substitution table. Each byte is substituted by another byte.
+- **Sub-Bytes**: Inthis, depending on number of bytes in data, every byte of data is replaced with a corresponding byte from the fixed substitution (S-box) table.    
 #### ShiftRows: 
-- The bytes in each row of the state are cyclically shifted to the left.
+- The bytes in each row of the state are cyclically shifted to the left. If the input of shift rows is considered as a state matrix with each element being the byte of the input, then the output will be the state matrix as shown in the image below:
+  <img width="230" height="183" alt="image" src="https://github.com/user-attachments/assets/e26c6c48-bb17-43f2-afbe-8fb241fcdd7e" /><img width="585" height="183" alt="image" src="https://github.com/user-attachments/assets/273937f1-4468-4694-8dfb-eccf7cf283f0" />
+
+
 #### MixColumns:
 - Each column of the state is transformed using a linear transformation to provide diffusion.
 #### AddRoundKey:
