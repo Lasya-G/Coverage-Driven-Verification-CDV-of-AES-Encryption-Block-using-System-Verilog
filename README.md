@@ -6,7 +6,7 @@ AES (Advanced Encryption Standard) employs a substitution-permutation network, w
 ### Key Expansion: 
 - The AES Encryption process starts with Key Expansion where all the required round keys are generated depending on the input length (128 bits here) referred to as cipher key. So, in our case 10 round keys(one key for each round) are generated for a key length of 128 based on the formula - *No. of rounds = (Key length/32) + 6*.
 ### Initial Round:
-- ** AddRoundKey:** 
+#### AddRoundKey:
 - Each byte of the state is combined with a block of the round key using bitwise XOR. The round keys are derived from the initial cipher key through a process known as key expansion. The purpose of AddRoundKey is to mix the data with the key material in a way that is computationally infeasible to reverse without knowledge of the key.
 - Main Rounds:
   - Substitution: Each byte in the state is replaced with a corresponding byte from a fixed substitution (S-box) table.    
