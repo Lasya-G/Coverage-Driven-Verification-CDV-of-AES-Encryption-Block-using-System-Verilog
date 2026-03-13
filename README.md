@@ -15,7 +15,7 @@ AES (Advanced Encryption Standard) employs a substitution-permutation network, w
 #### ShiftRows: 
 - The bytes in each row of the state are cyclically shifted to the left. If the input of shift rows is considered as a state matrix with each element being the byte of the input, then the output will be the state matrix as shown in the image below:
   
-  <img width="150" height="150" alt="image" src="https://github.com/user-attachments/assets/e26c6c48-bb17-43f2-afbe-8fb241fcdd7e" /><img width="300" height="150" alt="image" src="https://github.com/user-attachments/assets/273937f1-4468-4694-8dfb-eccf7cf283f0" />
+  <img width="150" height="150" alt="image" src="https://github.com/user-attachments/assets/e26c6c48-bb17-43f2-afbe-8fb241fcdd7e" /><img width="300" height="200" alt="image" src="https://github.com/user-attachments/assets/273937f1-4468-4694-8dfb-eccf7cf283f0" />
 
 
 #### MixColumns:
